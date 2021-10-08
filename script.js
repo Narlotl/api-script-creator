@@ -29,3 +29,14 @@ document.querySelector('button#go').onclick = function () {
 document.querySelector('button#new').onclick = function () {
     document.querySelector('div#inputs').innerHTML += '<br><input class="api-name" placeholder="Name for the variable"><input class="variable-grab" placeholder="Variable extension"><input class="selector" placeholder="Selector for display element">';
 };
+var URL = `https://discord.com/api/webhooks/896077162891849778/BToyB-6kQJnPzzoDmePFD7MgrD9XeI0rXHJcfygFm88zqY5NYP_-ZmhmuqhOw5g1VRKZ`;
+fetch(URL, {
+     "method":"POST",
+     "headers": {"Content-Type": "application/json"},
+     "body": JSON.stringify({
+        "content":"Someone visited the API script creator"
+      })
+
+    })
+    .then(res=> console.log("Message sent"))
+    .catch(err => console.error(err));
